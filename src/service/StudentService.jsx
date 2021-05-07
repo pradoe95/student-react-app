@@ -1,15 +1,13 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const baseurl = 'http://ec2-18-234-172-197.compute-1.amazonaws.com:8080';
+const baseurl = 'http://studentapi-env.eba-eunpxuhj.us-east-1.elasticbeanstalk.com/';
 
 // custom hook for performing GET request
 export const useFetch = (searchMethod, searchValue) => {
   let param = 0;
 
   if (searchValue !== undefined) param = searchValue;
-
- 
 
   const getAll = `${baseurl}/api/students`;
   const getById = `${baseurl}/api/students/` + param;
